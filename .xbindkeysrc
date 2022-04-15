@@ -1,0 +1,67 @@
+###########################
+# xbindkeys configuration #
+###########################
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+#
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Open dmenu
+"dmenu-recent-aliases"
+   Mod4 + space
+# NOTE!!! dmenu flags are hardcoded in dmenu-recent-aliases script
+
+# Increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +2%"
+   XF86AudioRaiseVolume
+
+# Decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -2%"
+   XF86AudioLowerVolume
+
+# Mute volume
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+   XF86AudioMute
+
+# Mute microphone
+"pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+   XF86AudioMicMute 
+
+# Decrease brightness
+"light -U 1"
+   XF86MonBrightnessDown
+
+# Decrease more brightness
+"light -U 5"
+   Mod4 + XF86MonBrightnessDown
+
+# Increase brightness
+"light -A 1"
+   XF86MonBrightnessUp
+
+# Increase more brightness
+"light -A 5"
+   Mod4 + XF86MonBrightnessUp
+
+# Open display manager
+"arandr"
+   XF86Display
+
+# Screenshot
+"flameshot gui"
+   XF86Tools
