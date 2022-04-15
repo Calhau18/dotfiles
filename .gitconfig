@@ -1,0 +1,7 @@
+[pull]
+	rebase = false
+[user]
+	name = João Rocha
+	email = j.t.f.rocha@gmail.com
+[color]
+	ui = auto
