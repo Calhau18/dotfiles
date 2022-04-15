@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/calhau/.xournalpp'
+let g:netrw_dirhist_5='/home/calhau/.cache/yay/electronmail-bin/.git/info'
+let g:netrw_dirhist_4='/home/calhau/.cache/yay/electronmail-bin/pkg'
+let g:netrw_dirhist_3='/usr/share/X11/xkb/rules'
+let g:netrw_dirhist_2='/etc/openvpn/client'
+let g:netrw_dirhist_1='/'
+let g:netrw_dirhist_0='/usr'
+let g:netrw_dirhist_9='/usr/share'
+let g:netrw_dirhist_8='/usr/share/kbd'
+let g:netrw_dirhist_7='/usr/share/kbd/keymaps'
