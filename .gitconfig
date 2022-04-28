@@ -1,9 +1,0 @@
-[pull]
-	rebase = false
-[user]
-	name = João Rocha
-	email = joao.tfrocha@protonmail.com
-[color]
-	ui = auto
-[merge]
-	tool = nvim -D
