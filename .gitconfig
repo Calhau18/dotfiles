@@ -2,6 +2,8 @@
 	rebase = false
 [user]
 	name = João Rocha
-	email = j.t.f.rocha@gmail.com
+	email = joao.tfrocha@protonmail.com
 [color]
 	ui = auto
+[merge]
+	tool = nvim -D
