@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c="cd"
 alias mv="mv -i"
-alias "git_login"="eval \"$(ssh-agent -s)\" ; ssh-add"
+alias "glogin"="eval \"$(ssh-agent -s)\" ; ssh-add"
 alias "gitcheat"="zathura $HOME/Documents/Cheatsheets/git-cheatsheet.pdf &"
 alias "regexcheat"="zathura $HOME/Documents/Cheatsheets/regex-cheatsheet.pdf &"
 alias time="/usr/bin/time -p "
