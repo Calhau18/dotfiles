@@ -1481,32 +1481,34 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         symbols[Group3]= [      dead_tilde, dead_circumflex,      dead_grave,      dead_breve ]
     };
     key <AB01> {
-        type[group1]= "FOUR_LEVEL_ALPHABETIC",
+        type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               z,               Z,        EuroSign,      rightarrow ],
+        symbols[Group1]= [               z,               Z,        EuroSign,      rightarrow,            Undo ],
         symbols[Group2]= [               z,               Z,              ae,              AE ],
         symbols[Group3]= [               z,               Z,   guillemotleft,            less ]
     };
     key <AB02> {
-        type= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               x,               X,          dollar,        infinity ],
+        type[group1]= "FIFTH_LAYER",
+        type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
+        type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
+        symbols[Group1]= [               x,               X,          dollar,        infinity,         XF86Cut ],
         symbols[Group2]= [               x,               X, dead_circumflex,      asciitilde ],
         symbols[Group3]= [               x,               X,  guillemotright,         greater ]
     };
     key <AB03> {
-        type[group1]= "FOUR_LEVEL_ALPHABETIC",
+        type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               c,               C,        ccedilla,        Ccedilla ],
+        symbols[Group1]= [               c,               C,        ccedilla,        Ccedilla,        XF86Copy ],
         symbols[Group2]= [               c,               C,        ccedilla,        Ccedilla ],
         symbols[Group3]= [               c,               C,            cent,       copyright ]
     };
     key <AB04> {
-        type[group1]= "FOUR_LEVEL_ALPHABETIC",
+        type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               v,               V, dead_circumflex,         radical ],
+        symbols[Group1]= [               v,               V, dead_circumflex,         radical,       XF86Paste ],
         symbols[Group2]= [               v,               V,              oe,              OE ],
         symbols[Group3]= [               v,               V, leftdoublequotemark, leftsinglequotemark ]
     };
