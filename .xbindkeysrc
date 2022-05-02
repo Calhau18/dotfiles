@@ -34,13 +34,33 @@
 "blueman-manager"
    Mod4 + b
 
+# Play-pause toggle
+"playerctl play-pause"
+   Mod3 + Meta_R + s
+
+# Skip to next track
+"playerctl next"
+   Mod3 + Meta_R + t
+
+# Skip to previous track
+"playerctl previous"
+   Mod3 + Meta_R + r
+
 # Increase volume
 "pactl set-sink-volume @DEFAULT_SINK@ +2%"
    XF86AudioRaiseVolume
 
+# Increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+   Mod4 + XF86AudioRaiseVolume
+
 # Decrease volume
 "pactl set-sink-volume @DEFAULT_SINK@ -2%"
    XF86AudioLowerVolume
+
+# Decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+   Mod4 + XF86AudioLowerVolume
 
 # Mute volume
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
