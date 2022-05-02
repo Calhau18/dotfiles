@@ -26,6 +26,14 @@
    Mod4 + space
 # NOTE!!! dmenu flags are hardcoded in dmenu-recent-aliases script
 
+# Lock screen
+"lock"
+   Mod4 + z
+
+# Open blueman-manager
+"blueman-manager"
+   Mod4 + b
+
 # Increase volume
 "pactl set-sink-volume @DEFAULT_SINK@ +2%"
    XF86AudioRaiseVolume

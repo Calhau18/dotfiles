@@ -43,9 +43,6 @@ exec --no-startup-id dex --autostart --environment i3
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# lock the screen
-bindsym $mod+z exec lock
-
 # start a terminal
 bindsym $mod+Shift+space exec alacritty
 bindsym $mod+Return exec alacritty
