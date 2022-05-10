@@ -12,7 +12,7 @@ call plug#begin()
 	Plug 'preservim/nerdtree'
 
 	" Automatic pair of parens, brackets, quotes, etc.
-	Plug 'jiangmiao/auto-pairs'
+	" Plug 'jiangmiao/auto-pairs'
 
 	" Easily delete, change and add surroundings in pairs.
 	Plug 'tpope/vim-surround'
