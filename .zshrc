@@ -110,6 +110,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias c="cd"
 alias mv="mv -i"
 alias ssh='TERM=xterm-256color ssh'
+alias dmenu_history='cat .dmenu_history| sort | uniq -c | sort -rg'
 alias "glogin"="eval \"$(ssh-agent -s)\" ; ssh-add"
 alias "gitcheat"="zathura $HOME/Documents/Cheatsheets/git-cheatsheet.pdf &"
 alias "regexcheat"="zathura $HOME/Documents/Cheatsheets/regex-cheatsheet.pdf &"
