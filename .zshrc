@@ -107,28 +107,28 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias c="cd"
 alias mv="mv -i"
-alias ssh='TERM=xterm-256color ssh'
-alias dmenu_history='cat .dmenu_history| sort | uniq -c | sort -rg'
-alias "glogin"="eval \"$(ssh-agent -s)\" ; ssh-add"
-alias "gitcheat"="zathura $HOME/Documents/Cheatsheets/git-cheatsheet.pdf &"
-alias "regexcheat"="zathura $HOME/Documents/Cheatsheets/regex-cheatsheet.pdf &"
-alias time="/usr/bin/time -p "
+alias c="cd"
 alias dl="cd ~/Downloads"
-alias doc="cd ~/Documents"
 alias des="cd ~/Desktop"
+alias fotos="cd ~/Desktop/Fotos"
+alias escola="cd ~/Desktop/Escola"
+alias doc="cd ~/Documents"
 alias cv="cd ~/Documents/CV"
-alias tc="cd ~/Desktop/Univ/'2º ano'/TC"
-alias ipm="cd ~/Desktop/Univ/'2º ano'/IPM"
+alias univ="cd ~/Desktop/Univ"
+alias bd="cd ~/Desktop/Univ/'2º ano'/BD"
+alias ia="cd ~/Desktop/Univ/'2º ano'/IA"
 alias proj="cd ~/Desktop/Projetos"
 alias sem="cd ~/Desktop/Projetos/Seminários"
 alias crypto="cd ~/Desktop/Projetos/Crypto"
 alias inv="cd ~/Desktop/Projetos/Investigação"
 alias miup="cd ~/Desktop/Projetos/MIUP"
-alias univ="cd ~/Desktop/Univ"
-alias fotos="cd ~/Desktop/Fotos"
-alias escola="cd ~/Desktop/Escola"
+alias ssh='TERM=xterm-256color ssh'
+alias dmenu_history='cat .dmenu_history| sort | uniq -c | sort -rg'
+alias glogin="eval \"$(ssh-agent -s)\" ; ssh-add"
+alias gitcheat="zathura $HOME/Documents/Cheatsheets/git-cheatsheet.pdf &"
+alias regexcheat="zathura $HOME/Documents/Cheatsheets/regex-cheatsheet.pdf &"
+alias time="/usr/bin/time -p "
 alias note="simplenote &"
 alias config='/usr/bin/git --git-dir=/home/calhau/.dotfiles/ --work-tree=/home/calhau'
 
