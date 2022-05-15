@@ -35,15 +35,15 @@
    Mod4 + b
 
 # Play-pause toggle
-"playerctl play-pause"
+"playerctl -p 'spotify' play-pause"
    Mod3 + Meta_R + s
 
 # Skip to next track
-"playerctl next"
+"playerctl -p 'spotify' next"
    Mod3 + Meta_R + t
 
 # Skip to previous track
-"playerctl previous"
+"playerctl -p 'spotify' previous"
    Mod3 + Meta_R + r
 
 # Increase volume
