@@ -132,6 +132,8 @@ workspace_auto_back_and_forth yes
 
 # assing workspaces to screens
 workspace $ws0 output HDMI-2
+workspace $wscomm output primary
+workspace $wsmusic output primary
 
 # switch to workspace
 bindsym $mod+0 workspace $ws0
