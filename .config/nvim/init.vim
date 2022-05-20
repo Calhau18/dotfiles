@@ -26,5 +26,8 @@ call plug#begin()
 	" Configuer status bar.
 	Plug 'itchyny/lightline.vim'
 
+	" Highlighting other uses of the word under the cursor.
+	Plug 'RRethy/vim-illuminate'
+
 " Initialize plugin system
 call plug#end()
