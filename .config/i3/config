@@ -205,5 +205,4 @@ assign [class="(?i)discord"] $wscomm
 for_window [class="(?i)discord"] layout tabbed
 assign [class="(?i)slack"] $wscomm
 for_window [class="(?i)slack"] layout tabbed
-assign [class="(?i)brave"] $ws2
 for_window [class="(?i)spotify"] move to workspace $wsmusic
