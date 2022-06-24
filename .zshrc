@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/calhau/.oh-my-zsh"
@@ -123,7 +123,8 @@ alias bd="cd ~/Desktop/Univ/'2º ano'/BD"
 alias ia="cd ~/Desktop/Univ/'2º ano'/IA"
 alias proj="cd ~/Desktop/Projetos"
 alias sem="cd ~/Desktop/Projetos/Seminários"
-alias crypto="cd ~/Desktop/Projetos/Crypto"
+alias crypto="cd ~/Desktop/Projetos/CiberSecurity/CryptoHack"
+alias stt="cd ~/Desktop/Projetos/CiberSecurity/STT"
 alias inv="cd ~/Desktop/Projetos/Investigação"
 alias miup="cd ~/Desktop/Projetos/MIUP"
 alias ssh='TERM=xterm-256color ssh'
@@ -140,3 +141,4 @@ alias config='/usr/bin/git --git-dir=/home/calhau/.dotfiles/ --work-tree=/home/c
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export MANPAGER="nvim +Man!"
+source /usr/share/nvm/init-nvm.sh
