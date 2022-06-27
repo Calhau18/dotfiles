@@ -25,8 +25,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 polybar --reload CalhauBar &
-change_bg # Script to change the background 
+change_bg
 picom --config $HOME/.config/picom/picom.conf &
 xbindkeys
 redshift &
+xss-lock lock &
 exec i3
