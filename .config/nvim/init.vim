@@ -7,21 +7,22 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=DarkGray
 set nowrap
 
-" TODO change mouse movement delay
+" Always show lines below/above the cursor
+set scrolloff=2
+set sidescrolloff=5
 
-" Set split direction
-set splitbelow
-set splitright
+" Set indentation rules
+set autoindent
+set smartindent
 
 " Set buffer configuration
 set hidden
+set splitbelow splitright
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
-" Set case policy for search
+" Set search configurations.
 set ignorecase smartcase
-
-" Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
@@ -37,14 +38,6 @@ set clipboard=unnamedplus
 " set spell 
 " set spelllang=en
 
-" Set indentation rules
-set autoindent
-set smartindent
-
-" Always show lines below/above the cursor
-set scrolloff=2
-set sidescrolloff=5
-
 " Define number formats for <Ctrl>-A and <Ctrl>-X commands
 set nrformats=alpha,hex,bin
 
@@ -58,16 +51,22 @@ filetype plugin on
 call plug#begin()
 " The default plugin directory will be:
 "   - stdpath('data') . '/plugged'
+	
+	" Highlighter.
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 	" Highlight yanked text.
 	Plug 'machakann/vim-highlightedyank'
 	highlight HighlightedyankRegion ctermbg=DarkGray
 
-	" Enhanced C++ highlighting.
-	Plug 'octol/vim-cpp-enhanced-highlight'
-
 	" Language Server Protocol support.
 	Plug 'neovim/nvim-lspconfig'
+	" XXX: Is this working?
+
+	" Enable completion.
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	" XXX: Configure 
+	" XXX: Compare with other completion engines
 
 	" Latex plugin.
 	Plug 'lervag/vimtex'
@@ -79,6 +78,9 @@ call plug#begin()
 
 	" Live preview of LaTeX files.
 	" Plug 'donRaphaco/neotex'
+
+	" Markdown live preview.
+	Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app && yarn install'}
 
 	" File system explorer.
 	Plug 'preservim/nerdtree'
@@ -126,5 +128,14 @@ call plug#begin()
 	" Github Copilot.
 	Plug 'github/copilot.vim'
 
+	" Devicons for many plugins
+	Plug 'ryanoasis/vim-devicons'
+	" Always load this module as the very last one.
+
 " Initialize plugin system
 call plug#end()
+
+" TODO change mouse movement delay
+"
+" Maybe add this later:
+" Plug 'rbgrouleff/bclose.vim'
