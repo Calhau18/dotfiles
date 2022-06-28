@@ -1,6 +1,9 @@
 " Setting mouse option
 set mouse=a
 
+" Setting Ctrl-S to save as in other contexts.
+map <C-S> <Cmd>w<CR>
+
 " Setting buffer configuration
 set number relativenumber
 set colorcolumn=80
@@ -18,13 +21,17 @@ set smartindent
 " Set buffer configuration
 set hidden
 set splitbelow splitright
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
+if maparg('<C-N>', 'n') ==# ''
+	nnoremap <C-N> :bnext<CR>
+endif
+if maparg('<C-P>', 'n') ==# ''
+	nnoremap <C-P> :bprev<CR>
+endif
 
 " Set search configurations.
 set ignorecase smartcase
 if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+	nnoremap <C-L> :noh<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
 
 " Preserve undo history
@@ -34,12 +41,15 @@ set undodir=/tmp//
 " Use clipboard for all operations
 set clipboard=unnamedplus
 
-" Set spellchecking options
-" set spell 
-" set spelllang=en
-
 " Define number formats for <Ctrl>-A and <Ctrl>-X commands
 set nrformats=alpha,hex,bin
+
+" Define mapleader
+let mapleader = '\'
+
+" Change command for , and ;
+noremap , ;
+noremap ; ,
 
 " Enable command-line completion
 set wildmenu
