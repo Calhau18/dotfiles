@@ -30,6 +30,10 @@
 "lock"
    Mod4 + z
 
+# Change background
+"change_bg"
+   Mod4 + c
+
 # Open blueman-manager
 "blueman-manager"
    Mod4 + b
