@@ -54,6 +54,9 @@ noremap ; ,
 " Enable command-line completion
 set wildmenu
 
+" Terminal configurations
+tnoremap <Esc> <C-\><C-n>
+
 filetype plugin on
 
 " vim-plug section. 
