@@ -1,0 +1,4 @@
+#!/bin/bash
+
+$HOME/.fehbg
+xinput --map-to-output 'Wacom Pen and multitouch sensor Finger' eDP-1
