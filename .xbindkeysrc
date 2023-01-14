@@ -27,7 +27,7 @@
 # NOTE!!! dmenu flags are hardcoded in dmenu-recent-aliases script
 
 # Open dmenu with a list of pdf files
-".local/bin/dmenu_pdf.sh"
+"dmenu_files"
    Mod4 + p
 
 # Lock screen
