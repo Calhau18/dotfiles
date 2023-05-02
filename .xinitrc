@@ -24,10 +24,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-polybar --reload CalhauBar &
-change_bg
-picom --config $HOME/.config/picom/picom.conf &
-xbindkeys
-redshift &
-xss-lock lock &
+polybar --reload CalhauBar & # load polybar
+change_bg # change background
+picom --config $HOME/.config/picom/picom.conf & # compositor
+xbindkeys # set keyboard shortcuts
+redshift & # set screen color temperature
+xss-lock -n dim_screen -- lock & # lock screen when idle
+dunst & # notification daemon
 exec i3
