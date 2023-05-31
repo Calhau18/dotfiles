@@ -94,6 +94,10 @@
 "light -A 5"
    Mod4 + XF86MonBrightnessUp
 
+# Set brightness to maximum
+"light -S 100"
+   Mod4 + Shift + XF86MonBrightnessUp
+
 # Screenshot
 "flameshot gui"
    XF86Tools
