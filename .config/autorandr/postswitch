@@ -1,4 +1,6 @@
 #!/bin/bash
 
 $HOME/.fehbg
-xinput --map-to-output 'Wacom Pen and multitouch sensor Finger' eDP-1
+xinput list --name-only | grep 'Wacom' | while read -r line ; do
+    xinput map-to-output "$line" eDP-1
+done
