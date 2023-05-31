@@ -1284,7 +1284,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               q,               Q,            less,   lessthanequal,          Escape ],
+        symbols[Group1]= [               q,               Q,               1,        NoSymbol,          Escape ],
         symbols[Group2]= [               q,               Q,      adiaeresis,      Adiaeresis ],
         symbols[Group3]= [               q,               Q,              at,     Greek_OMEGA ]
     };
@@ -1292,7 +1292,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1]= [               w,               W,    bracketright,   guillemotleft ],
+        symbols[Group1]= [               w,               W,    bracketright,        NoSymbol ],
         symbols[Group2]= [               w,               W,           aring,           Aring ],
         symbols[Group3]= [               w,               W,         lstroke,         Lstroke ]
     };
@@ -1300,7 +1300,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FOUR_LEVEL_ALPHABETIC",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               f,               F,      braceright,  guillemotright ],
+        symbols[Group1]= [               f,               F,      braceright,        NoSymbol ],
         symbols[Group2]= [               f,               F,          atilde,  guillemotright ],
         symbols[Group3]= [               e,               E,        EuroSign,            cent ]
     };
@@ -1308,7 +1308,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FOUR_LEVEL_ALPHABETIC",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               p,               P,      parenright, greaterthanequal ],
+        symbols[Group1]= [               p,               P,      parenright, NoSymbol ],
         symbols[Group2]= [               p,               P,          oslash,          Oslash ],
         symbols[Group3]= [               r,               R,       paragraph,      registered ]
     };
@@ -1316,7 +1316,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group3]= "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1]= [               g,               G,       masculine,        notequal ],
+        symbols[Group1]= [               g,               G,       masculine,        NoSymbol ],
         symbols[Group2]= [               g,               G,     dead_ogonek,      asciitilde ],
         symbols[Group3]= [               t,               T,          tslash,          Tslash ]
     };
@@ -1324,7 +1324,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               j,               J,       ampersand,        multiply ],
+        symbols[Group1]= [               j,               J,       ampersand,        NoSymbol ],
         symbols[Group2]= [               j,               J,         dstroke,         Dstroke ],
         symbols[Group3]= [               y,               Y,       leftarrow,             yen ]
     };
@@ -1332,7 +1332,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               l,               L,        asterisk,               1,            Home ],
+        symbols[Group1]= [               l,               L,        asterisk,        multiply,            Home ],
         symbols[Group2]= [               l,               L,         lstroke,         Lstroke ],
         symbols[Group3]= [               u,               U,       downarrow,         uparrow ]
     };
@@ -1340,7 +1340,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               u,               U,            plus,               2,           Prior ],
+        symbols[Group1]= [               u,               U,            plus,       plusminus,           Prior ],
         symbols[Group2]= [               u,               U,          uacute,          Uacute ],
         symbols[Group3]= [               i,               I,      rightarrow,        idotless ]
     };
@@ -1348,7 +1348,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               y,               Y,           equal,               3,            Next ],
+        symbols[Group1]= [               y,               Y,           equal,        notequal,            Next ],
         symbols[Group2]= [               y,               Y,      udiaeresis,      Udiaeresis ],
         symbols[Group3]= [               o,               O,          oslash,          Oslash ]
     };
@@ -1356,7 +1356,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL",
         type[group3]= "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1]= [      dead_greek,      dead_grave,               0,      logicaland,             End ],
+        symbols[Group1]= [      dead_acute,      dead_grave,               0,      logicaland,             End ],
         symbols[Group2]= [       semicolon,           colon,      odiaeresis,      Odiaeresis ],
         symbols[Group3]= [               p,               P,           thorn,           THORN ]
     };
@@ -1418,7 +1418,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group3]= "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1]= [               h,               H,        question,       plusminus ],
+        symbols[Group1]= [               h,               H,        question,        NoSymbol ],
         symbols[Group2]= [               h,               H,      dead_caron,      asciitilde ],
         symbols[Group3]= [               h,               H,         hstroke,         Hstroke ]
     };
@@ -1426,7 +1426,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               n,               N,          exclam,               4,         KP_Left ],
+        symbols[Group1]= [               n,               N,          exclam,        NoSymbol,         KP_Left ],
         symbols[Group2]= [               n,               N,          ntilde,          Ntilde ],
         symbols[Group3]= [               j,               J,       dead_hook,       dead_horn ]
     };
@@ -1434,7 +1434,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               e,               E,            less,               5,		     KP_Up ],
+        symbols[Group1]= [               e,               E,            less,   lessthanequal, 	     KP_Up ],
         symbols[Group2]= [               e,               E,          eacute,          Eacute ],
         symbols[Group3]= [               k,               K,             kra,       ampersand ]
     };
@@ -1442,7 +1442,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               i,               I,         greater,               6,         KP_Down ],
+        symbols[Group1]= [               i,               I,         greater,greaterthanequal,         KP_Down ],
         symbols[Group2]= [               i,               I,          iacute,          Iacute ],
         symbols[Group3]= [               l,               L,         lstroke,         Lstroke ]
     };
@@ -1458,7 +1458,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL",
         type[group3]= "FOUR_LEVEL",
-        symbols[Group1]= [      apostrophe,        quotedbl,      dead_acute,      dead_grave ],
+        symbols[Group1]= [      apostrophe,        quotedbl,        NoSymbol,        NoSymbol ],
         symbols[Group2]= [      apostrophe,        quotedbl,          otilde,          Otilde ],
         symbols[Group3]= [       masculine,     ordfeminine, dead_circumflex,      dead_caron ]
     };
@@ -1508,13 +1508,13 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL_ALPHABETIC",
         type[group3]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               v,               V, dead_circumflex,         radical,       XF86Paste ],
+        symbols[Group1]= [               v,               V, dead_circumflex,     asciicircum,       XF86Paste ],
         symbols[Group2]= [               v,               V,              oe,              OE ],
         symbols[Group3]= [               v,               V, leftdoublequotemark, leftsinglequotemark ]
     };
     key <AB05> {
         type= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               b,               B,      dead_tilde,         notsign ],
+        symbols[Group1]= [               b,               B,      dead_tilde,      asciitilde ],
         symbols[Group2]= [               b,               B,      dead_breve,      asciitilde ],
         symbols[Group3]= [               b,               B, rightdoublequotemark, rightsinglequotemark ]
     };
@@ -1522,31 +1522,31 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group3]= "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1]= [               k,               K,              at,       plusminus ],
+        symbols[Group1]= [               k,               K,              at,        NoSymbol ],
         symbols[Group2]= [               k,               K,  dead_abovering,      asciitilde ],
         symbols[Group3]= [               n,               N,               n,               N ]
     };
     key <AB07> {
         type= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               m,               M,      numbersign,               7 ],
+        symbols[Group1]= [               m,               M,      numbersign,        NoSymbol ],
         symbols[Group2]= [               m,               M,     dead_macron,      asciitilde ],
         symbols[Group3]= [               m,               M,              mu,       masculine ]
     };
     key <AB08> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [           comma,       semicolon,      dead_acute,               8 ],
+        symbols[Group1]= [           comma,       semicolon,      dead_acute,        NoSymbol ],
         symbols[Group2]= [           comma,            less,    dead_cedilla,      asciitilde ],
         symbols[Group3]= [           comma,       semicolon,  horizconnector,        multiply ]
     };
     key <AB09> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [          period,           colon, dead_circumflex,               9 ],
+        symbols[Group1]= [          period,           colon, dead_circumflex,        NoSymbol ],
         symbols[Group2]= [          period,         greater,   dead_abovedot,      asciitilde ],
         symbols[Group3]= [          period,           colon,  periodcentered,        division ]
     };
     key <AB10> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [           minus,      underscore,      dead_greek,               0 ],
+        symbols[Group1]= [           minus,      underscore,      dead_greek,        NoSymbol ],
         symbols[Group2]= [           slash,        question,    questiondown,      asciitilde ],
         symbols[Group3]= [           minus,      underscore,   dead_belowdot,   dead_abovedot ]
     };
