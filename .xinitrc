@@ -25,10 +25,18 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 polybar --reload CalhauBar & # load polybar
+
 change_bg # change background
 picom --config $HOME/.config/picom/picom.conf & # compositor
-xbindkeys # set keyboard shortcuts
 redshift & # set screen color temperature
 xss-lock -n dim_screen -- lock & # lock screen when idle
+
+xbindkeys # set keyboard shortcuts
+xset r rate 250 30 & # set keyboard repeat rate
+xset m 2/1 4 & # set mouse acceleration
+xset s 360 240 & # set screen saver timeout
+
 dunst & # notification daemon
+touchegg & # touchscreen and touchpad motion daemon
+
 exec i3

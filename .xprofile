@@ -1,4 +1,0 @@
-touchegg &
-xset r rate 250 30 & # set keyboard repeat rate
-xset m 2/1 4 & # set mouse acceleration
-xset s 360 240 & # set screen saver timeout
