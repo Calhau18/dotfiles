@@ -25,6 +25,7 @@ for_window [all] title_window_icon on
 
 # Defining border style
 default_border pixel 1
+for_window [class="^.*"] border pixel 1
 
 # Defining gaps
 gaps inner 5
@@ -126,7 +127,7 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 
-set $ws9 
+set $ws9 
 
 # workspace back and forth
 workspace_auto_back_and_forth yes
@@ -159,6 +160,9 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+k move container to workspace $ws8
 bindsym $mod+Shift+m move container to workspace $ws9
+
+bindsym $mod+backslash workspace next
+bindsym $mod+Shift+backslash workspace prev
 
 # reload the configuration file
 bindsym $mod+Shift+s reload
@@ -202,4 +206,15 @@ assign [class="(?i)discord"] $ws8
 for_window [class="(?i)discord"] layout tabbed
 assign [class="(?i)slack"] $ws8
 for_window [class="(?i)slack"] layout tabbed
+assign [class="(?i)whatsapp"] $ws8
+for_window [class="(?i)whatsapp"] layout tabbed
+assign [class="(?i)thunderbird"] $ws8
+for_window [class="(?i)thunderbird"] layout tabbed
+assign [class="(?i)protonmail"] $ws8
+for_window [class="(?i)protonmail"] layout tabbed
+
 for_window [class="(?i)spotify"] move to workspace $ws9
+assign [class="(?i)todoist"] $ws9
+assign [class="(?i)gcalendar"] $ws9
+
+for_window [class="(?i)blueman-manager"] floating enable
