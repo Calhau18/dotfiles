@@ -78,7 +78,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions web-search command-not-found vi-mode)
+plugins=(zsh-autosuggestions web-search command-not-found vi-mode ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,9 +107,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias open="xdgopen"
-alias mv="mv -i"
+alias o="xdg-open"
+alias n=nvim
 alias c="cd"
+alias mv="mv -i"
 alias dl="cd ~/Downloads"
 alias des="cd ~/Desktop"
 alias fotos="cd ~/Desktop/Fotos"
@@ -117,24 +118,35 @@ alias escola="cd ~/Desktop/Escola"
 alias doc="cd ~/Documents"
 alias cv="cd ~/Documents/CV"
 alias univ="cd ~/Desktop/Univ"
-alias resumos_cdi1="evince ~/Desktop/Univ/'1º ano'/CDI1/CDI.pdf &"
-alias resumos_cdi2="evince ~/Desktop/Univ/'1º ano'/CDI2/CDI2.pdf &"
-alias bd="cd ~/Desktop/Univ/'2º ano'/BD"
-alias ia="cd ~/Desktop/Univ/'2º ano'/IA"
 alias proj="cd ~/Desktop/Projetos"
-alias sem="cd ~/Desktop/Projetos/Seminários"
-alias crypto="cd ~/Desktop/Projetos/CiberSecurity/CryptoHack"
-alias stt="cd ~/Desktop/Projetos/CiberSecurity/STT"
-alias inv="cd ~/Desktop/Projetos/Investigação"
-alias miup="cd ~/Desktop/Projetos/MIUP"
 alias ssh='TERM=xterm-256color ssh'
 alias dmenu_history='cat .dmenu_history| sort | uniq -c | sort -rg'
 alias glogin="eval \"$(ssh-agent -s)\" ; ssh-add"
-alias gitcheat="zathura $HOME/Documents/Cheatsheets/git-cheatsheet.pdf &"
-alias regexcheat="zathura $HOME/Documents/Cheatsheets/regex-cheatsheet.pdf &"
 alias time="/usr/bin/time -p "
 alias note="simplenote &"
+alias gcalendar="brave -kiosk --app=https://calendar.google.com/calendar/u/0/r/week &"
+alias whatsapp="brave -kiosk --app=https://web.whatsapp.com/ &"
+alias protonmail="brave -kiosk --app=https://mail.proton.me/u/2/inbox &"
 alias config='/usr/bin/git --git-dir=/home/calhau/.dotfiles/ --work-tree=/home/calhau'
+alias brave='brave $(cat $HOME/.config/brave-flags.conf | sed "s/#.*//")'
+
+alias ga="git add"
+alias gb="git branch"
+alias gc="git commit -m"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias gf="git fetch"
+alias gl="git log"
+alias gll="git log --graph --decorate --oneline"
+alias gm="git merge"
+alias gpush="git push"
+alias gpushsup="git push --set-upstream origin $(git branch --show-current)"
+alias gpull="git pull"
+alias gs="git status"
+alias gst="git stash"
+alias grst="git restore"
+alias grsts="git restore --staged"
+alias gsw="git switch"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
