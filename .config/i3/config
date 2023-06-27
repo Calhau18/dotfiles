@@ -20,7 +20,7 @@ client.urgent           #A54242 #A54242 #ffffff
 client.placeholder      #333333 #5f676a #F2D078
 
 # Defining window title bars
-font pango:monospace 9
+font pango:monospace 7
 for_window [all] title_window_icon on
 
 # Defining border style
