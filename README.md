@@ -1,2 +1,75 @@
 # dotfiles
 My dotfiles.
+
+Package Manager:
+I'm using the `paru` package manager, which can be obtained [here]().
+
+PACKAGE NAME(S)                     | PURPOSE
+------------------------------------|-----------------------------------------
+xorg-server xorg-xinit              | Display server and initialization
+i3-wm                               | Window manager
+neovim                              | Text editor
+git                                 | Version Control
+noto-fonts                          | Fonts
+network-manager-applet              | Network management
+zsh (zsh-autosuggestions)           | Shell
+alacritty                           | Terminal
+ttf-meslo-nerd-font-powerlevel10k   | Terminal font
+polybar                             | Window manager bar
+xbindkeys                           | Keybindings
+picom                               | Compositing
+redshift                            | Manage screen light temperature
+backlight-control                   | Set screen light
+xorg-xrandr                         | Configure screen's properties
+touchegg (touche)                   | Movement commands
+dunst                               | Notification daemon
+pulseaudio pulseaudio-alsa          | Sound server
+flameshot                           | Screenshots
+
+------------------------------------|-----------------------------------------
+pulsemixer (pulseaudio-control)     | Sound CLI management
+pulseaudio-bluetooth                | Sound for bluetooth
+bluez bluez-utils (blueman)         | Bluetooth management
+brave(-bin)                         | Web bowser
+evince                              | Pdf viewer
+feh                                 | Image viewer
+mpv                                 | Media player
+thunderbird                         | Email client
+
+------------------------------------|-----------------------------------------
+openssh                             | ---                              
+ripgrep                             | ---                              
+fd                                  | ---                              
+
+------------------------------------|-----------------------------------------
+discord                             | ---                              
+spotify                             | ---                              
+todoist                             | ---                              
+
+## Extra Configuration
+
+### Zsh
+
+Execute
+
+```
+sh -c "$(curl -fsSl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+to, respectively, install `oh-my-zsh`, `powerlevel10k` and the `zsh-autosuggestions` plugin.
+
+### Neovim
+
+Execute 
+
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+to install `vim-plug` as a plugin manager for neovim.
+
+Note that `fd` and `ripgrep` are dependencies for `telescope`, `ttf-meslo-nerd-font-powerlevel10k` is for `vim-devicons`.
