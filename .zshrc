@@ -9,7 +9,7 @@ fi
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/calhau/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 
 # Set name of the theme to load --- if set to "random", it will
@@ -127,7 +127,7 @@ alias note="simplenote &"
 alias gcalendar="brave -kiosk --app=https://calendar.google.com/calendar/u/0/r/week &"
 alias whatsapp="brave -kiosk --app=https://web.whatsapp.com/ &"
 alias protonmail="brave -kiosk --app=https://mail.proton.me/u/2/inbox &"
-alias config='/usr/bin/git --git-dir=/home/calhau/.dotfiles/ --work-tree=/home/calhau'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias brave='brave $(cat $HOME/.config/brave-flags.conf | sed "s/#.*//")'
 
 alias ga="git add"
@@ -140,7 +140,6 @@ alias gl="git log"
 alias gll="git log --graph --decorate --oneline"
 alias gm="git merge"
 alias gpush="git push"
-alias gpushsup="git push --set-upstream origin $(git branch --show-current)"
 alias gpull="git pull"
 alias gs="git status"
 alias gst="git stash"
@@ -153,4 +152,3 @@ alias gsw="git switch"
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export MANPAGER="nvim +Man!"
-source /usr/share/nvm/init-nvm.sh
