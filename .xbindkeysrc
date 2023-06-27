@@ -56,48 +56,52 @@
 
 # Increase volume
 "pactl set-sink-volume @DEFAULT_SINK@ +2%"
-   XF86AudioRaiseVolume
+   F3
 
 # Increase volume
 "pactl set-sink-volume @DEFAULT_SINK@ +5%"
-   Mod4 + XF86AudioRaiseVolume
+   Mod4 + F3
 
 # Decrease volume
 "pactl set-sink-volume @DEFAULT_SINK@ -2%"
-   XF86AudioLowerVolume
+   F2
 
 # Decrease volume
 "pactl set-sink-volume @DEFAULT_SINK@ -5%"
-   Mod4 + XF86AudioLowerVolume
+   Mod4 + F2
 
 # Mute volume
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-   XF86AudioMute
+   F1
 
 # Mute microphone
 "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
-   XF86AudioMicMute 
+   F4 
 
 # Decrease brightness
-"light -U 1"
-   XF86MonBrightnessDown
+"backlight_control -1"
+   F5
 
 # Decrease more brightness
-"light -U 5"
-   Mod4 + XF86MonBrightnessDown
+"backlight_control -5"
+   Mod4 + F5
+
+# Set brightness to minimum
+"backlight_control 0"
+   Mod4 + Shift + F5
 
 # Increase brightness
-"light -A 1"
-   XF86MonBrightnessUp
+"backlight_control +1"
+   F6
 
 # Increase more brightness
-"light -A 5"
-   Mod4 + XF86MonBrightnessUp
+"backlight_control +5"
+   Mod4 + F6
 
 # Set brightness to maximum
-"light -S 100"
-   Mod4 + Shift + XF86MonBrightnessUp
+"backlight_control 100"
+   Mod4 + Shift + F6
 
 # Screenshot
 "flameshot gui"
-   XF86Tools
+   F9
