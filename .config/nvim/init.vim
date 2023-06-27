@@ -71,7 +71,7 @@ call plug#begin()
 
   " Fuzzy finder.
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'}
+  " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 
   " NeoVim Cheatsheet
@@ -188,16 +188,16 @@ lua << END
       -- TODO: octo.nvim ?
       -- TODO: couldn't get media_files to work
       -- TODO: couldn't get env to work
-      fzf = {
-	fuzzy = true,
-	override_generic_sorter = true,
-	override_file_sorter = true,
-	case_mode = "smart_case"
-      }
+      -- fzf = {
+      --   fuzzy = true,
+      --   override_generic_sorter = true,
+      --   override_file_sorter = true,
+      --   case_mode = "smart_case"
+      -- }
     }
   }
 
-  require('telescope').load_extension('fzf')
+  -- require('telescope').load_extension('fzf')
 
   ----------------------------- LUALINE CONFIG --------------------------------
 
