@@ -13,6 +13,7 @@ git                                 | Version Control
 noto-fonts                          | Fonts
 network-manager-applet              | Network management
 zsh (zsh-autosuggestions)           | Shell
+adwaita-dark                        | GUI theme
 alacritty                           | Terminal
 ttf-meslo-nerd-font-powerlevel10k   | Terminal font
 polybar                             | Window manager bar
@@ -20,7 +21,8 @@ xbindkeys                           | Keybindings
 picom                               | Compositing
 redshift                            | Manage screen light temperature
 backlight-control                   | Set screen light
-xorg-xrandr                         | Configure screen's properties
+xorg-xrandr (arandr autorandr)      | Configure screen's properties
+rofi                                | Command launching and others
 touchegg (touche)                   | Movement commands
 dunst                               | Notification daemon
 pulseaudio pulseaudio-alsa          | Sound server
@@ -32,6 +34,7 @@ pulseaudio-bluetooth                | Sound for bluetooth
 bluez bluez-utils (blueman)         | Bluetooth management
 brave(-bin)                         | Web bowser
 evince                              | Pdf viewer
+libreoffice                         | General file editing
 feh                                 | Image viewer
 mpv                                 | Media player
 thunderbird                         | Email client
@@ -73,3 +76,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 to install `vim-plug` as a plugin manager for neovim.
 
 Note that `fd` and `ripgrep` are dependencies for `telescope`, `ttf-meslo-nerd-font-powerlevel10k` is for `vim-devicons`.
+
+### Mouse
+
+Visit [this article](https://wiki.archlinux.org/title/Libinput#Configuration) to configure the trackpad.
