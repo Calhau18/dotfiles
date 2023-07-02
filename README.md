@@ -27,8 +27,6 @@ touchegg (touche)                   | Movement commands
 dunst                               | Notification daemon
 pulseaudio pulseaudio-alsa          | Sound server
 flameshot                           | Screenshots
-
-------------------------------------|-----------------------------------------
 pulsemixer (pulseaudio-control)     | Sound CLI management
 pulseaudio-bluetooth                | Sound for bluetooth
 bluez bluez-utils (blueman)         | Bluetooth management
@@ -38,16 +36,14 @@ libreoffice                         | General file editing
 feh                                 | Image viewer
 mpv                                 | Media player
 thunderbird                         | Email client
-
-------------------------------------|-----------------------------------------
+git-credential-manager              | Git credential management        
 openssh                             | ---                              
 ripgrep                             | ---                              
 fd                                  | ---                              
-
-------------------------------------|-----------------------------------------
 discord                             | ---                              
 spotify                             | ---                              
 todoist                             | ---                              
+alsa-utils                          | ---                              
 
 ## Extra Configuration
 
@@ -80,3 +76,9 @@ Note that `fd` and `ripgrep` are dependencies for `telescope`, `ttf-meslo-nerd-f
 ### Mouse
 
 Visit [this article](https://wiki.archlinux.org/title/Libinput#Configuration) to configure the trackpad.
+
+### Sound
+
+The packages `sof-firmware` and `alsa-ucm-conf` are needed to make sound work (at least on Thinkpad X1 Carbon Gen 4).
+
+NOTE: I have unistalled alsa-utils - if things break reinstall.
