@@ -2,7 +2,7 @@
 My dotfiles.
 
 Package Manager:
-I'm using the `paru` package manager, which can be obtained [here]().
+I'm using the `paru` package manager, which can be obtained [here](https://github.com/Morganamilo/paru).
 
 PACKAGE NAME(S)                     | PURPOSE
 ------------------------------------|-----------------------------------------
