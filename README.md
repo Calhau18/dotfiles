@@ -17,6 +17,7 @@ adwaita-dark                        | GUI theme
 alacritty                           | Terminal
 ttf-meslo-nerd-font-powerlevel10k   | Terminal font
 polybar                             | Window manager bar
+ttf-font-awesome-5                  | Font for icons on polybar
 xbindkeys                           | Keybindings
 picom                               | Compositing
 redshift                            | Manage screen light temperature
@@ -42,7 +43,7 @@ ripgrep                             | ---
 fd                                  | ---                              
 discord                             | ---                              
 spotify                             | ---                              
-todoist                             | ---                              
+todoist-appimage                    | ---                              
 alsa-utils                          | ---                              
 
 ## Extra Configuration
