@@ -1,13 +1,8 @@
 #!/bin/sh
 
-CONNECTED=''
-DISCONNECTED=''
-
 bluetooth_print() {
     bluetoothctl | while read -r REPLY; do
         if [ "$(systemctl is-active "bluetooth.service")" = "active" ]; then
-            printf $CONNECTED
-
             devices_paired=$(bluetoothctl devices Paired | grep Device | cut -d ' ' -f 2)
             counter=0
 
@@ -28,8 +23,6 @@ bluetooth_print() {
             done
 
             printf '\n'
-        else
-            echo $DISCONNECTED
         fi
     done
 }
