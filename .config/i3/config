@@ -126,8 +126,8 @@ set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 
-set $ws9 
+set $ws8 "C"
+set $ws9 "M"
 
 # workspace back and forth
 workspace_auto_back_and_forth yes
