@@ -18,6 +18,7 @@ alacritty                           | Terminal
 ttf-meslo-nerd-font-powerlevel10k   | Terminal font
 polybar                             | Window manager bar
 ttf-font-awesome-5                  | Font for icons on polybar
+playerctl                           | Control media players
 xbindkeys                           | Keybindings
 picom                               | Compositing
 redshift                            | Manage screen light temperature
