@@ -45,14 +45,17 @@
 # Play-pause toggle
 "playerctl -p 'spotify' play-pause"
    Mod3 + Meta_R + s
+   XF86AudioPlay
 
 # Skip to next track
 "playerctl -p 'spotify' next"
    Mod3 + Meta_R + t
+   XF86AudioNext
 
 # Skip to previous track
 "playerctl -p 'spotify' previous"
    Mod3 + Meta_R + r
+   XF86AudioPrev
 
 # Increase volume
 "pactl set-sink-volume @DEFAULT_SINK@ +2%"
