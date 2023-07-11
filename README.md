@@ -32,6 +32,7 @@ flameshot                           | Screenshots
 pulsemixer (pulseaudio-control)     | Sound CLI management
 pulseaudio-bluetooth                | Sound for bluetooth
 bluez bluez-utils (blueman)         | Bluetooth management
+fprintd                             | Fingerprint reading
 brave(-bin)                         | Web bowser
 evince                              | Pdf viewer
 libreoffice                         | General file editing
@@ -83,4 +84,10 @@ Visit [this article](https://wiki.archlinux.org/title/Libinput#Configuration) to
 
 The packages `sof-firmware` and `alsa-ucm-conf` are needed to make sound work (at least on Thinkpad X1 Carbon Gen 4).
 
-NOTE: I have unistalled alsa-utils - if things break reinstall.
+### Only prompt for default user password on boot
+
+See [this link](https://wiki.archlinux.org/title/getty#Prompt_only_the_password_for_a_default_user_in_virtual_console_login)
+
+### Fingerprint reading
+
+See [this link](https://wiki.archlinux.org/title/Fprint)
