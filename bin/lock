@@ -1,18 +1,17 @@
 #!/bin/sh
 
-i3lock \
---color=00000000 \
--i ~/Desktop/Fotos/Backgrounds/LockScreen/granja_lock.jpg -F \
---indicator --radius 100 \
---inside{,ver}-color=999999bb --ring{,ver}-color=222222dd --verif-text="" \
--k -e \
---greeter-text="Welcome Back!" --greeter-color=ddddddff --greeteroutline-color=000000ff --greeteroutline-width=0.1 --greeter-size=50 --greeter-pos=x+w/2:y+13*h/14 \
---wrong-text="Try Again" \
---noinput-text="Cleared!" \
---time-size=38 --time-pos=x+w/2:y+iy-3 \
---date-str="%a, %d %b %y" --date-size=20 \
---pass-media-keys \
---pass-screen-keys \
---pass-power-keys \
---pass-volume-keys \
---keylayout 0 &
+CONF_FILE=$HOME/.config/lock-flags.conf
+
+if ! pidof i3lock; then
+    playerctl -a pause > /dev/null
+    amixer set Master mute > /dev/null
+
+    cat $CONF_FILE | xargs i3lock &
+
+    while pidof i3lock > /dev/null; do
+	if (timeout 5 fprintd-verify | grep -q verify-match); then
+	    pkill i3lock
+	fi
+    done
+fi
+
