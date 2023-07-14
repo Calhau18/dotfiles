@@ -64,6 +64,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 to, respectively, install `oh-my-zsh`, `powerlevel10k` and the `zsh-autosuggestions` plugin.
 
+### Rofi
+
+Using [these launchers](https://github.com/adi1090x/rofi).
+
 ### Neovim
 
 Execute 

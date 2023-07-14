@@ -21,14 +21,9 @@
 #keystate_capslock = enable
 #keystate_scrolllock= enable
 
-# Open dmenu
-"dmenu-recent-aliases"
+# Open rofi
+"rofi_launch"
    Mod4 + space
-# NOTE!!! dmenu flags are hardcoded in dmenu-recent-aliases script
-
-# Open dmenu with a list of pdf files
-"dmenu_files"
-   Mod4 + p
 
 # Lock screen
 "lock"
