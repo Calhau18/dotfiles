@@ -24,7 +24,8 @@ picom                               | Compositing
 xss-lock                            | Lock screen upon suspension
 redshift                            | Manage screen light temperature
 backlight-control                   | Set screen light
-xorg-xrandr (arandr autorandr)      | Configure screen's properties
+xorg-xrandr (arandr)                | Configure screen's properties
+xorg-xinput                         | Configure input devices
 rofi                                | Command launching and others
 touchegg (touche)                   | Movement commands
 dunst                               | Notification daemon
@@ -64,10 +65,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ```
 
 to, respectively, install `oh-my-zsh`, `powerlevel10k` and the `zsh-autosuggestions` plugin.
-
-### Rofi
-
-Using [these launchers](https://github.com/adi1090x/rofi).
 
 ### Neovim
 
