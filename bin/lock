@@ -3,9 +3,6 @@
 CONF_FILE=$HOME/.config/lock-flags.conf
 
 if ! pidof i3lock; then
-    playerctl -a pause > /dev/null
-    amixer set Master mute > /dev/null
-
     cat $CONF_FILE | xargs i3lock &
 
     while pidof i3lock > /dev/null; do
