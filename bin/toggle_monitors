@@ -1,0 +1,25 @@
+#!/bin/sh
+
+PRIMARY=$(xrandr | grep ' primary' | awk '{print $1}')
+PRIMARY_RESOLUTION=$(xrandr | grep $PRIMARY | awk '{print $4}' | cut -d '+' -f 1)
+
+if [ $(xrandr | grep ' connected' | wc -l) -eq 1 ]; then
+    xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos 0x0 --rotate normal
+elif [ $(xrandr | grep ' connected' | wc -l) -eq 2 ]; then
+    PRIMARY_WIDTH=$(echo $PRIMARY_RESOLUTION | cut -d 'x' -f 1)
+
+    SECONDARY=$(xrandr | grep ' connected' | tail -1 | awk '{print $1}')
+    SECONDARY_RESOLUTION=$(xrandr | grep -A 1 'HDMI-1' | tail -1 | awk '{print $1}')
+    SECONDARY_WIDTH=$(echo $SECONDARY_RESOLUTION | cut -d 'x' -f 1)
+    SECONDARY_HEIGHT=$(echo $SECONDARY_RESOLUTION | cut -d 'x' -f 2)
+
+    if [ "$PRIMARY_WIDTH" -gt "$SECONDARY_WIDTH" ]; then
+	xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos 0x$SECONDARY_HEIGHT --rotate normal --output $SECONDARY --mode $SECONDARY_RESOLUTION --pos $(($PRIMARY_WIDTH - $SECONDARY_WIDTH))x0
+    else
+	xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos $(($SECONDARY_WIDTH - $PRIMARY_WIDTH))x$SECONDARY_HEIGHT --rotate normal --output $SECONDARY --mode $SECONDARY_RESOLUTION --pos 0x0
+    fi
+
+    xinput list --name-only | grep 'Wacom' | while read -r line ; do
+	xinput map-to-output "$line" $PRIMARY
+    done
+fi

@@ -1,6 +1,0 @@
-#!/bin/bash
-
-$HOME/.fehbg
-xinput list --name-only | grep 'Wacom' | while read -r line ; do
-    xinput map-to-output "$line" eDP-1
-done
