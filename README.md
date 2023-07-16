@@ -21,6 +21,7 @@ ttf-font-awesome-5                  | Font for icons on polybar
 playerctl                           | Control media players
 xbindkeys                           | Keybindings
 picom                               | Compositing
+xss-lock                            | Lock screen upon suspension
 redshift                            | Manage screen light temperature
 backlight-control                   | Set screen light
 xorg-xrandr (arandr autorandr)      | Configure screen's properties
