@@ -43,16 +43,16 @@ configuration {
 		parse-user:   true;
 		/** Parse system desktop files. */
 		parse-system: true;
-    }
+	}
 
 	/*---------- Run settings ----------*/
-	run-command: "{cmd}";
-	run-list-command: "";
+	run-command: "/bin/zsh -i -c '{cmd}'";
+	run-list-command: "/bin/zsh -i -c alias | awk -F'[ =]' '{print $1}'";
 	run-shell-command: "{terminal} -e {cmd}";
 
 	/*---------- Fallback Icon ----------*/
 	run,drun {
-		fallback-icon: "application-x-addon";
+	    fallback-icon: "application-x-addon";
 	}
 
 	/*---------- Window switcher settings ----------*/
@@ -104,14 +104,16 @@ configuration {
     }
 
 	/*---------- Keybindings ----------*/
-	kb-row-down: "Alt+i";
-	kb-row-up: "Alt+e";
-	kb-page-prev: "Alt+n";
-	kb-page-next: "Alt+o";
-	kb-mode-next: "Alt+y";
-	kb-mode-previous: "Alt+u";
-	kb-row-first: "Alt+l";
-	kb-row-last: "Alt+dead_acute";
+	kb-row-down: "Super+i";
+	kb-row-up: "Super+e";
+	kb-page-prev: "Super+n";
+	kb-page-next: "Super+o";
+	kb-mode-next: "Page_Down,Super+y";
+	kb-mode-previous: "Page_Up,Super+u";
+	kb-row-first: "Home,Super+l";
+	kb-row-last: "End,Super+dead_acute";
+	kb-accept-entry: "Return,KP_Enter,Super+space";
+	kb-cancel: "Escape,Super+q";
 /*
 	kb-primary-paste: "Control+V,Shift+Insert";
 	kb-secondary-paste: "Control+v,Insert";

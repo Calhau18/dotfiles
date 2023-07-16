@@ -9,10 +9,10 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "run,drun,filebrowser,window";
+	modi:                       "run,filebrowser,window";
     show-icons:                 true;
     display-run:                " Run";
-    display-drun:               " Apps";
+    // display-drun:               " Apps";
     display-filebrowser:        " Files";
     display-window:             " Windows";
     drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
@@ -32,15 +32,15 @@ configuration {
     normal-background:           var(background);
     normal-foreground:           var(foreground);
     urgent-background:           var(urgent);
-    urgent-foreground:           var(background);
+    urgent-foreground:           var(background-alt);
     active-background:           var(active);
-    active-foreground:           var(background);
+    active-foreground:           var(background-alt);
     selected-normal-background:  var(selected);
-    selected-normal-foreground:  var(background);
+    selected-normal-foreground:  var(background-alt);
     selected-urgent-background:  var(active);
-    selected-urgent-foreground:  var(background);
+    selected-urgent-foreground:  var(background-alt);
     selected-active-background:  var(urgent);
-    selected-active-foreground:  var(background);
+    selected-active-foreground:  var(background-alt);
     alternate-normal-background: var(background);
     alternate-normal-foreground: var(foreground);
     alternate-urgent-background: var(urgent);
@@ -49,8 +49,8 @@ configuration {
     alternate-active-foreground: var(background);
 
     /* For Screens with 1920x1080 resolution */
-    screen-margin:               275px 400px;
-    box-spacing:                 20px;
+    screen-margin:               15px 15px;
+    box-spacing:                 12px;
     list-padding:                8px;
     element-padding:             15px;
     element-radius:              8px;
@@ -74,9 +74,9 @@ window {
     transparency:                "real";
     location:                    center;
     anchor:                      center;
-    fullscreen:                  true;
-    width:                       1366px;
-    height:                      768px;
+    fullscreen:                  false;
+    width:                       800px;
+    height:                      500px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -85,7 +85,7 @@ window {
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               8px;
     border-color:                @border-colour;
     cursor:                      "default";
     /* Backgroud Colors */
@@ -116,7 +116,7 @@ mainbox {
 /*****----- A Custom Box -----*****/
 custombox {
     spacing:                     @box-spacing;
-    background-color:            @background-colour;
+    background-color:            #00000000;
     text-color:                  @foreground-colour;
     orientation:                 horizontal;
     children:                    [ "mode-switcher", "listview" ];
