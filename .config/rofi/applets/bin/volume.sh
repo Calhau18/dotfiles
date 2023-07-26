@@ -100,11 +100,11 @@ run_rofi() {
 # Execute Command
 run_cmd() {
 	if [[ "$1" == '--opt1' ]]; then
-		amixer -Mq set Master,0 5%+ unmute
+		pactl set-sink-volume @DEFAULT_SINK@ +5%
 	elif [[ "$1" == '--opt2' ]]; then
-		amixer set Master toggle
+		pactl set-sink-mute @DEFAULT_SINK@ toggle
 	elif [[ "$1" == '--opt3' ]]; then
-		amixer -Mq set Master,0 5%- unmute
+		pactl set-sink-volume @DEFAULT_SINK@ -5%
 	elif [[ "$1" == '--opt4' ]]; then
 		amixer set Capture toggle
 	elif [[ "$1" == '--opt5' ]]; then

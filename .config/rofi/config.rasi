@@ -21,7 +21,7 @@ configuration {
 /*	dpi: -1;*/
 
 	/*---------- Matching setting ----------*/
-	matching: "normal";
+	matching: "prefix";
 	tokenize: true;
 
 	/*---------- SSH settings ----------*/
@@ -104,8 +104,8 @@ configuration {
     }
 
 	/*---------- Keybindings ----------*/
-	kb-row-down: "Super+i";
-	kb-row-up: "Super+e";
+	kb-row-down: "Down,Super+i";
+	kb-row-up: "Up,Super+e";
 	kb-page-prev: "Super+n";
 	kb-page-next: "Super+o";
 	kb-mode-next: "Page_Down,Super+y";
