@@ -10,7 +10,7 @@ xorg-server xorg-xinit              | Display server and initialization
 i3-wm                               | Window manager
 neovim                              | Text editor
 git                                 | Version Control
-noto-fonts                          | Fonts
+noto-fonts noto-fonts-emoji         | Fonts
 network-manager-applet              | Network management
 zsh (zsh-autosuggestions)           | Shell
 adwaita-dark                        | GUI theme

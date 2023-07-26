@@ -122,7 +122,6 @@ alias proj="cd ~/Desktop/Projetos"
 alias ssh='TERM=xterm-256color ssh'
 alias dmenu_history='cat .dmenu_history| sort | uniq -c | sort -rg'
 alias glogin="eval \"$(ssh-agent -s)\" ; ssh-add"
-alias time="time -p "
 alias note="simplenote &"
 alias gcalendar="brave -kiosk --app=https://calendar.google.com/calendar/u/0/r/week &"
 alias whatsapp="brave -kiosk --app=https://web.whatsapp.com/ &"
