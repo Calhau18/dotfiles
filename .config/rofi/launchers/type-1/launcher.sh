@@ -17,4 +17,5 @@ theme='style-15'
 ## Run
 rofi \
     -show run \
-    -theme ${dir}/${theme}.rasi
+    -theme ${dir}/${theme}.rasi \
+    $*
