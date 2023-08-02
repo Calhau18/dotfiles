@@ -106,28 +106,22 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias zshconfig="nvim ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias o="xdg-open"
 alias n=nvim
 alias c="cd"
 alias mv="mv -i"
+
 alias dl="cd ~/Downloads"
 alias des="cd ~/Desktop"
 alias fotos="cd ~/Desktop/Fotos"
-alias escola="cd ~/Desktop/Escola"
-alias doc="cd ~/Documents"
 alias cv="cd ~/Documents/CV"
-alias univ="cd ~/Desktop/Univ"
-alias proj="cd ~/Desktop/Projetos"
+
 alias ssh='TERM=xterm-256color ssh'
-alias dmenu_history='cat .dmenu_history| sort | uniq -c | sort -rg'
-alias glogin="eval \"$(ssh-agent -s)\" ; ssh-add"
-alias note="simplenote &"
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias brave='brave $(cat $HOME/.config/brave-flags.conf | sed "s/#.*//")'
 alias gcalendar="brave -kiosk --app=https://calendar.google.com/calendar/u/0/r/week &"
 alias whatsapp="brave -kiosk --app=https://web.whatsapp.com/ &"
 alias protonmail="brave -kiosk --app=https://mail.proton.me/u/2/inbox &"
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias brave='brave $(cat $HOME/.config/brave-flags.conf | sed "s/#.*//")'
 
 alias ga="git add"
 alias gb="git branch"
