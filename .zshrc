@@ -122,6 +122,7 @@ alias brave='brave $(cat $HOME/.config/brave-flags.conf | sed "s/#.*//")'
 alias gcalendar="brave -kiosk --app=https://calendar.google.com/calendar/u/0/r/week &"
 alias whatsapp="brave -kiosk --app=https://web.whatsapp.com/ &"
 alias protonmail="brave -kiosk --app=https://mail.proton.me/u/2/inbox &"
+alias lock="cat $HOME/.config/lock-flags.conf | xargs i3lock &"
 
 alias ga="git add"
 alias gb="git branch"
