@@ -43,3 +43,5 @@ dunst &                # notification daemon
 touchegg &             # touchscreen and touchpad motion daemon
 
 exec i3
+
+sync_desktop

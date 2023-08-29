@@ -1,0 +1,8 @@
+#!/bin/sh
+
+LAST_BOOT=$(last reboot | head -2 | tail -1 | awk '{print $5,$6,$7,$8}')
+MAX_AGE=$(( ($(date +%s) - $(date -d "$LAST_BOOT" +%s))/(60*60*24) + 1))d
+
+notify-send "Syncing Desktop to Google Drive"
+alacritty -e rclone copy -P --max-age $MAX_AGE --no-traverse ~/Desktop/ remote:
+notify-send "Desktop synced to Google Drive"
