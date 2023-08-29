@@ -1,0 +1,3 @@
+!#/bin/sh
+
+cat $HOME/.config/lock-flags.conf | xargs i3lock &
