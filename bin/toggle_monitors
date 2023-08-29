@@ -19,13 +19,21 @@ elif [ $SCREEN_COUNT -eq 2 ]; then
     SECONDARY_WIDTH=$(echo $SECONDARY_RESOLUTION | cut -d 'x' -f 1)
     SECONDARY_HEIGHT=$(echo $SECONDARY_RESOLUTION | cut -d 'x' -f 2)
 
-    # Place secondary monitor centered vertically above primary monitor
-    if [ "$PRIMARY_WIDTH" -gt "$SECONDARY_WIDTH" ]; then
-	xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos 0x$SECONDARY_HEIGHT --output $SECONDARY --mode $SECONDARY_RESOLUTION --pos $(($PRIMARY_WIDTH - $SECONDARY_WIDTH))x0
-    else
-	xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos $(( $(($SECONDARY_WIDTH - $PRIMARY_WIDTH)) / 2))x$SECONDARY_HEIGHT --output $SECONDARY --mode $SECONDARY_RESOLUTION --pos 0x0
+    if [ $1 = "left" ]; then
+	xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos 0x0 --output $SECONDARY --mode $SECONDARY_RESOLUTION --left-of $PRIMARY
+    elif [ $1 = "right" ]; then
+	xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos 0x0 --output $SECONDARY --mode $SECONDARY_RESOLUTION --right-of $PRIMARY
+    else # default to above
+	# Center vertically
+	if [ "$PRIMARY_WIDTH" -gt "$SECONDARY_WIDTH" ]; then
+	    xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos 0x$SECONDARY_HEIGHT --output $SECONDARY --mode $SECONDARY_RESOLUTION --pos $(($PRIMARY_WIDTH - $SECONDARY_WIDTH))x0
+	else
+	    xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos $(( $(($SECONDARY_WIDTH - $PRIMARY_WIDTH)) / 2))x$SECONDARY_HEIGHT --output $SECONDARY --mode $SECONDARY_RESOLUTION --pos 0x0
+	fi
     fi
 fi
+
+change_bg
 
 xinput list --name-only | grep 'Wacom' | while read -r line ; do
 	xinput map-to-output "$line" $PRIMARY
