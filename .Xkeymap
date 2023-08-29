@@ -1316,7 +1316,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group3]= "FOUR_LEVEL_ALPHABETIC",
-        symbols[Group1]= [               g,               G,       masculine,        NoSymbol ],
+        symbols[Group1]= [               g,               G,             bar,        NoSymbol ],
         symbols[Group2]= [               g,               G,     dead_ogonek,      asciitilde ],
         symbols[Group3]= [               t,               T,          tslash,          Tslash ]
     };
@@ -1362,7 +1362,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
     };
     key <AD11> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [       parenleft,     bracketleft,               1,           U2039 ],
+        symbols[Group1]= [       backslash,           slash,               1,           U2039 ],
         symbols[Group2]= [     bracketleft,       braceleft,   guillemotleft,           U2039 ],
         symbols[Group3]= [            plus,        asterisk,  dead_diaeresis,  dead_abovering ]
     };
