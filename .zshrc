@@ -113,8 +113,8 @@ alias mv="mv -i"
 
 alias dl="cd ~/Downloads"
 alias des="cd ~/Desktop"
-alias fotos="cd ~/Desktop/Fotos"
-alias cv="cd ~/Documents/CV"
+alias fotos="cd ~/Fotos"
+alias cv="cd ~/Desktop/Documents/CV"
 
 alias ssh='TERM=xterm-256color ssh'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'

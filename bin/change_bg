@@ -1,6 +1,6 @@
 #!/bin/sh
 
-FOLDER=~/Desktop/Fotos/Backgrounds
+FOLDER=~/Fotos/Backgrounds
 BACKGROUND=$(ls $FOLDER | sort -R | head -1)
 
 feh --bg-scale $FOLDER/$BACKGROUND
