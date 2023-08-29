@@ -1,0 +1,8 @@
+#!/bin/sh
+
+UPTIME=$(cat $HOME/.last_uptime)
+echo $UPTIME
+
+notify-send "Syncing Desktop to Google Drive"
+alacritty -e clone copy -P --max-age $UPTIME --no-traverse ~/Desktop/ remote:
+notify-send "Desktop synced to Google Drive"
