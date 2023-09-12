@@ -202,16 +202,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-assign [class="(?i)discord"] $ws8
-for_window [class="(?i)discord"] layout tabbed
-assign [class="(?i)slack"] $ws8
-for_window [class="(?i)slack"] layout tabbed
-assign [class="(?i)whatsapp"] $ws8
-for_window [class="(?i)whatsapp"] layout tabbed
 assign [class="(?i)thunderbird"] $ws8
 for_window [class="(?i)thunderbird"] layout tabbed
 assign [class="(?i)protonmail"] $ws8
 for_window [class="(?i)protonmail"] layout tabbed
+assign [class="(?i)discord"] $ws8
+for_window [class="(?i)discord"] layout tabbed
+assign [class="(?i)whatsapp"] $ws8
+for_window [class="(?i)whatsapp"] layout tabbed
+assign [class="(?i)slack"] $ws8
+for_window [class="(?i)slack"] layout tabbed
+assign [class="(?i)telegram-desktop"] $ws8
+for_window [class="(?i)telegram-desktop"] layout tabbed
 
 for_window [class="(?i)spotify"] move to workspace $ws9
 assign [class="(?i)todoist"] $ws9
