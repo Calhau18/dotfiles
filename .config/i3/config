@@ -125,15 +125,16 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-set $ws7 "7"
-set $ws8 "C"
-set $ws9 "M"
+set $ws7 "C"
+set $ws8 "M"
+set $ws9 "G"
 
 # workspace back and forth
 workspace_auto_back_and_forth yes
 
 # assing workspaces to screens
 workspace $ws0 output HDMI-2
+workspace $ws7 output primary
 workspace $ws8 output primary
 workspace $ws9 output primary
 
@@ -145,9 +146,9 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+k workspace $ws8
-bindsym $mod+m workspace $ws9
+bindsym $mod+k workspace $ws7
+bindsym $mod+m workspace $ws8
+bindsym $mod+comma workspace $ws9
 
 # move focused container to workspace
 bindsym $mod+Shift+0 move container to workspace $ws0
@@ -157,9 +158,9 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+k move container to workspace $ws8
-bindsym $mod+Shift+m move container to workspace $ws9
+bindsym $mod+Shift+k move container to workspace $ws7
+bindsym $mod+Shift+m move container to workspace $ws8
+bindsym $mod+Shift+comma move container to workspace $ws9
 
 bindsym $mod+backslash workspace next
 bindsym $mod+Shift+backslash workspace prev
@@ -202,21 +203,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-assign [class="(?i)thunderbird"] $ws8
+assign [class="(?i)thunderbird"] $ws7
 for_window [class="(?i)thunderbird"] layout tabbed
-assign [class="(?i)protonmail"] $ws8
-for_window [class="(?i)protonmail"] layout tabbed
-assign [class="(?i)discord"] $ws8
+assign [class="(?i)discord"] $ws7
 for_window [class="(?i)discord"] layout tabbed
-assign [class="(?i)whatsapp"] $ws8
-for_window [class="(?i)whatsapp"] layout tabbed
-assign [class="(?i)slack"] $ws8
+assign [class="(?i)slack"] $ws7
 for_window [class="(?i)slack"] layout tabbed
-assign [class="(?i)telegram-desktop"] $ws8
+assign [class="(?i)telegram-desktop"] $ws7
 for_window [class="(?i)telegram-desktop"] layout tabbed
-
-for_window [class="(?i)spotify"] move to workspace $ws9
-assign [class="(?i)todoist"] $ws9
-assign [class="(?i)gcalendar"] $ws9
 
 for_window [class="(?i)blueman-manager"] floating enable

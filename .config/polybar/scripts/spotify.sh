@@ -9,4 +9,4 @@ else
     PLAYER=$(echo "$PLAYERS" | head -n1)
 fi
 
-echo $(playerctl metadata --format '{{artist}} - {{title}}' --player=$PLAYER)
+echo $(playerctl metadata --format '{{title}} - {{artist}}' --player=$PLAYER)
