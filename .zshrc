@@ -113,6 +113,7 @@ alias mv="mv -i"
 
 alias dl="cd ~/Downloads"
 alias des="cd ~/Desktop"
+alias doc="cd ~/Documents"
 alias fotos="cd ~/Fotos"
 alias cv="cd ~/Desktop/Documents/CV"
 
