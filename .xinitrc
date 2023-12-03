@@ -27,8 +27,6 @@ fi
 # allow custom scripts
 export PATH=$HOME/bin:$PATH
 
-polybar --reload &    # load polybar
-
 change_bg &					  # change background
 picom --config $HOME/.config/picom/picom.conf &   # compositor
 redshift &                                        # set screen color temperature
