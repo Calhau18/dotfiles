@@ -29,6 +29,7 @@ xorg-xinput                         | Configure input devices
 rofi                                | Command launching and others
 touchegg (touche)                   | Movement commands
 dunst                               | Notification daemon
+i3-battery-popup                    | Script for notifying low battery
 pulseaudio pulseaudio-alsa          | Sound server
 flameshot                           | Screenshots
 pulsemixer (pulseaudio-control)     | Sound CLI management

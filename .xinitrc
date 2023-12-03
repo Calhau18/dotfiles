@@ -33,6 +33,7 @@ change_bg &					  # change background
 picom --config $HOME/.config/picom/picom.conf &   # compositor
 redshift &                                        # set screen color temperature
 xss-lock -n dim_screen -- lock &                  # lock screen when idle
+i3-battery-popup -n -i "battery-low" -t 1m &      # notification when battery is low
 
 xbindkeys &            # set keyboard shortcuts
 xset r rate 250 30 &   # set keyboard repeat rate
