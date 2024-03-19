@@ -1,0 +1,41 @@
+#!/bin/bash
+
+if [[ "$1" == "normal" ]]; then
+    ~/.config/polybar/launch.sh
+    xrandr -o normal
+    xinput list --name-only | grep 'Wacom' | while read -r line ; do
+        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix"  0 0 0 0 0 0 0 0 0
+    done
+    exit 0
+elif [[ "$1" == "" ]]; then
+    xrandr -o normal
+    xinput list --name-only | grep 'Wacom' | while read -r line ; do
+        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix"  0 0 0 0 0 0 0 0 0
+    done
+    ~/.config/polybar/launch.sh
+    exit 0
+elif [ "$1" == "left" ]; then
+    ~/.config/polybar/launch.sh short
+    xrandr -o left
+    xinput list --name-only | grep 'Wacom' | while read -r line ; do
+        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix"  0 -1 1 1 0 0 0 0 1
+    done
+    exit 0
+elif [ "$1" == "right" ]; then
+    ~/.config/polybar/launch.sh short
+    xrandr -o right
+    xinput list --name-only | grep 'Wacom' | while read -r line ; do
+        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix"  0 1 0 -1 0 1 0 0 1
+    done
+    exit 0
+elif [ "$1" == "inverted" ]; then
+    ~/.config/polybar/launch.sh
+    xrandr -o inverted
+    xinput list --name-only | grep 'Wacom' | while read -r line ; do
+        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix"  -1 0 1 0 -1 1 0 0 1
+    done
+    exit 0
+else
+    echo "Usage: rotate_screen [normal|left|right|inverted]"
+    exit 1
+fi
