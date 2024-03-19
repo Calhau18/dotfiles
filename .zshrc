@@ -120,7 +120,7 @@ alias cv="cd ~/Desktop/Documents/CV"
 alias ssh='TERM=xterm-256color ssh'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias brave='cat $HOME/.config/brave-flags.conf | xargs brave'
-alias gcalendar="brave -kiosk --app=https://calendar.google.com/calendar/u/0/r/week &"
+alias calendar="brave -kiosk --app=https://calendar.proton.me/u/82/ &"
 alias whatsapp="brave -kiosk --app=https://web.whatsapp.com/ &"
 alias protonmail="brave -kiosk --app=https://mail.proton.me/u/2/inbox &"
 alias lock="cat $HOME/.config/lock-flags.conf | xargs i3lock &"

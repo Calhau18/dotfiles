@@ -26,6 +26,7 @@ fi
 
 # allow custom scripts
 export PATH=$HOME/bin:$PATH
+export PLASMA_USE_QT_SCALING=1.5
 
 change_bg &					  # change background
 picom --config $HOME/.config/picom/picom.conf &   # compositor

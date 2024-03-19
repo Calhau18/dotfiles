@@ -39,10 +39,12 @@ fprintd                             | Fingerprint reading
 brave(-bin)                         | Web bowser
 evince                              | Pdf viewer
 libreoffice                         | General file editing
+dolphin (breeze-icons ffmpegthumbs) | File management
 feh                                 | Image viewer
 mpv                                 | Media player
 thunderbird                         | Email client
 git-credential-manager              | Git credential management        
+android-tools                       | Android tools
 openssh                             | ---                              
 ripgrep                             | ---                              
 fd                                  | ---                              
