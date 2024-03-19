@@ -23,8 +23,9 @@ bluetooth_print() {
             done
 
             printf '\n'
-        fi
+	fi
     done
+
 }
 
 bluetooth_toggle() {
