@@ -215,3 +215,5 @@ assign [class="(?i)telegram-desktop"] $ws7
 for_window [class="(?i)telegram-desktop"] layout tabbed
 
 for_window [class="(?i)blueman-manager"] floating enable
+for_window [class="(?i)arandr"] floating enable
+for_window [class="(?i)pavucontrol"] floating enable
