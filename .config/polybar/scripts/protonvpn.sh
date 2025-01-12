@@ -12,7 +12,7 @@ function disconnect_vpn () {
 
 function is_vpn_connected () {
     status=$(protonvpn s | grep Status: | awk '{ print $2 }')
-    if [ $status = "Connected" ]; then
+    if [[ $status == "Connected" ]]; then
         echo 0
     else
         echo 1
@@ -38,7 +38,7 @@ function output () {
     fi
     echo "$out"
 }
-while getopts 'ot' c
+while getopts 'oat' c
 do
     case $c in
         o) output ;;

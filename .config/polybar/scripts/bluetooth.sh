@@ -5,7 +5,7 @@ bluetooth_print() {
         if [ "$(systemctl is-active "bluetooth.service")" = "active" ]; then
             devices_paired=$(bluetoothctl devices Paired | grep Device | cut -d ' ' -f 2)
             counter=0
-
+            printf "%s" "%{F#F0C674}%{F-}"
             for device in $devices_paired; do
                 device_info=$(bluetoothctl info "$device")
 
