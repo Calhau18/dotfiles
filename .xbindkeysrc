@@ -100,6 +100,10 @@ Mod4 + Shift + F6
 "arandr"
 F7
 
+# Open display manager
+"toggle_monitors"
+Mod4 + F7
+
 # Open network manager
 "alacritty -e nmtui"
 F8

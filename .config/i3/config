@@ -95,6 +95,7 @@ bindsym $mod+minus split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+bindsym --release $mod+button2 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+w layout tabbed
@@ -166,6 +167,9 @@ bindsym $mod+Shift+comma move container to workspace $ws9
 
 bindsym $mod+backslash workspace next
 bindsym $mod+Shift+backslash workspace prev
+
+bindsym $mod+period focus output left
+bindsym $mod+Shift+period move workspace to output next
 
 # reload the configuration file
 bindsym $mod+Shift+s reload
