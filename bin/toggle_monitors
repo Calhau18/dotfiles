@@ -2,41 +2,65 @@
 
 sleep 1
 
-PATH="/usr/bin/:$PATH"
+# Ensure PATH includes /usr/bin
+PATH="/usr/bin:$PATH"
 
+# Get xrandr output and extract relevant information
 XRANDR_OUTPUT=$(xrandr)
 PRIMARY=$(echo "$XRANDR_OUTPUT" | grep ' primary' | awk '{print $1}')
-PRIMARY_RESOLUTION=$(echo "$XRANDR_OUTPUT" | grep $PRIMARY | awk '{print $4}' | cut -d '+' -f 1)
+PRIMARY_RESOLUTION=$(echo "$XRANDR_OUTPUT" | grep "$PRIMARY" | awk '{print $4}' | cut -d '+' -f1)
 SCREEN_COUNT=$(echo "$XRANDR_OUTPUT" | grep ' connected' | wc -l)
 
-if [ $SCREEN_COUNT -eq 1 ]; then
-    xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos 0x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output DP-2 --off
-elif [ $SCREEN_COUNT -eq 2 ]; then
-    PRIMARY_WIDTH=$(echo $PRIMARY_RESOLUTION | cut -d 'x' -f 1)
-
-    SECONDARY=$(echo "$XRANDR_OUTPUT" | grep ' connected' | tail -1 | awk '{print $1}')
-    SECONDARY_RESOLUTION=$(echo "$XRANDR_OUTPUT" | grep -A 1 $SECONDARY | tail -1 | awk '{print $1}')
-    SECONDARY_WIDTH=$(echo $SECONDARY_RESOLUTION | cut -d 'x' -f 1)
-    SECONDARY_HEIGHT=$(echo $SECONDARY_RESOLUTION | cut -d 'x' -f 2)
-
-    if [ $1 = "left" ]; then
-	xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos 0x0 --output $SECONDARY --mode $SECONDARY_RESOLUTION --left-of $PRIMARY
-    elif [ $1 = "right" ]; then
-	xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos 0x0 --output $SECONDARY --mode $SECONDARY_RESOLUTION --right-of $PRIMARY
-    else # default to above
-	# Center vertically
-	if [ "$PRIMARY_WIDTH" -gt "$SECONDARY_WIDTH" ]; then
-	    xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos 0x$SECONDARY_HEIGHT --output $SECONDARY --mode $SECONDARY_RESOLUTION --pos $(($PRIMARY_WIDTH - $SECONDARY_WIDTH))x0
-	else
-	    xrandr --output $PRIMARY --primary --mode $PRIMARY_RESOLUTION --pos $(( $(($SECONDARY_WIDTH - $PRIMARY_WIDTH)) / 2))x$SECONDARY_HEIGHT --output $SECONDARY --mode $SECONDARY_RESOLUTION --pos 0x0
-	fi
-    fi
+# Single monitor setup
+if [ "$SCREEN_COUNT" -eq 1 ]; then
+    xrandr --output "$PRIMARY" --primary --mode "$PRIMARY_RESOLUTION" --pos 0x0 \
+           --output HDMI-1 --off --output DP-1 --off --output DP-2 --off
+    exit 0
 fi
 
+# Dual monitor setup
+if [ "$SCREEN_COUNT" -eq 2 ]; then
+    PRIMARY_WIDTH=$(echo "$PRIMARY_RESOLUTION" | cut -d 'x' -f1)
+    SECONDARY=$(echo "$XRANDR_OUTPUT" | grep ' connected' | grep -v "$PRIMARY" | awk '{print $1}')
+    SECONDARY_RESOLUTION=$(echo "$XRANDR_OUTPUT" | grep -A 1 "$SECONDARY" | tail -1 | awk '{print $1}')
+    SECONDARY_WIDTH=$(echo "$SECONDARY_RESOLUTION" | cut -d 'x' -f1)
+    SECONDARY_HEIGHT=$(echo "$SECONDARY_RESOLUTION" | cut -d 'x' -f2)
+
+    # Default position is "right"
+    POSITION=${1:-right}
+
+    case "$POSITION" in
+        left)
+            xrandr --output "$PRIMARY" --primary --mode "$PRIMARY_RESOLUTION" --pos 0x0 \
+                   --output "$SECONDARY" --mode "$SECONDARY_RESOLUTION" --left-of "$PRIMARY"
+            ;;
+        right)
+            xrandr --output "$PRIMARY" --primary --mode "$PRIMARY_RESOLUTION" --pos 0x0 \
+                   --output "$SECONDARY" --mode "$SECONDARY_RESOLUTION" --right-of "$PRIMARY"
+            ;;
+        above)
+            if [ "$PRIMARY_WIDTH" -gt "$SECONDARY_WIDTH" ]; then
+                xrandr --output "$PRIMARY" --primary --mode "$PRIMARY_RESOLUTION" --pos 0x$SECONDARY_HEIGHT \
+                       --output "$SECONDARY" --mode "$SECONDARY_RESOLUTION" --pos $(($PRIMARY_WIDTH - $SECONDARY_WIDTH))x0
+            else
+                xrandr --output "$PRIMARY" --primary --mode "$PRIMARY_RESOLUTION" --pos $(( ($SECONDARY_WIDTH - $PRIMARY_WIDTH) / 2 ))x$SECONDARY_HEIGHT \
+                       --output "$SECONDARY" --mode "$SECONDARY_RESOLUTION" --pos 0x0
+            fi
+            ;;
+        *)
+            echo "Invalid argument. Use 'left', 'right', or 'above'. Defaulting to 'right'."
+            xrandr --output "$PRIMARY" --primary --mode "$PRIMARY_RESOLUTION" --pos 0x0 \
+                   --output "$SECONDARY" --mode "$SECONDARY_RESOLUTION" --right-of "$PRIMARY"
+            ;;
+    esac
+fi
+
+# Change background
 change_bg
 
-xinput list --name-only | grep 'Wacom' | while read -r line ; do
-	xinput map-to-output "$line" $PRIMARY
+# Map Wacom tablet to primary display
+xinput list --name-only | grep 'Wacom' | while read -r line; do
+    xinput map-to-output "$line" "$PRIMARY"
 done
 
 exit 0

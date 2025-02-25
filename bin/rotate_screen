@@ -1,41 +1,63 @@
 #!/bin/bash
 
-if [[ "$1" == "normal" ]]; then
-    ~/.config/polybar/launch.sh
-    xrandr -o normal
-    xinput list --name-only | grep 'Wacom' | while read -r line ; do
-        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix"  0 0 0 0 0 0 0 0 0
+# Define orientation order for cycling
+ORIENTATIONS=("normal" "right" "inverted" "left")
+
+# Get current orientation
+CURRENT_ORIENTATION=$(xrandr --query --verbose | grep ' connected' | grep -oE '(normal|inverted|left|right)' | head -1)
+
+# Function to apply screen rotation
+apply_rotation() {
+    local orientation="$1"
+    case "$orientation" in
+        normal)
+            MATRIX="0 0 0 0 0 0 0 0 0"
+            ;;
+        right)
+            MATRIX="0 1 0 -1 0 1 0 0 1"
+            ;;
+        inverted)
+            MATRIX="-1 0 1 0 -1 1 0 0 1"
+            ;;
+        left)
+            MATRIX="0 -1 1 1 0 0 0 0 1"
+            ;;
+        *)
+            echo "Invalid orientation"
+            exit 1
+            ;;
+    esac
+    
+    ~/.config/polybar/launch.sh $([[ "$orientation" == "left" || "$orientation" == "right" ]] && echo short)
+    xrandr -o "$orientation"
+    xinput list --name-only | grep 'Wacom' | while read -r line; do
+        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix" $MATRIX
     done
+}
+
+
+# Apply rotation based on argument
+if [[ " ${ORIENTATIONS[*]} " =~ " $1 " ]]; then
+    apply_rotation "$1"
     exit 0
-elif [[ "$1" == "" ]]; then
-    xrandr -o normal
-    xinput list --name-only | grep 'Wacom' | while read -r line ; do
-        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix"  0 0 0 0 0 0 0 0 0
+elif [[ "" == "$1" ]]; then
+    apply_rotation normal
+    exit 0
+# Handle cycling
+elif [[ " $1 " == " next " || " $1 " == " previous " ]]; then
+    for i in "${!ORIENTATIONS[@]}"; do
+        echo i
+        if [[ "${ORIENTATIONS[$i]}" == "$CURRENT_ORIENTATION" ]]; then
+            if [[ "$1" == "next" ]]; then
+                NEXT_INDEX=$(( (i + 1) % ${#ORIENTATIONS[@]} ))
+            else
+                NEXT_INDEX=$(( (i - 1 + ${#ORIENTATIONS[@]}) % ${#ORIENTATIONS[@]} ))
+            fi
+            apply_rotation "${ORIENTATIONS[$NEXT_INDEX]}"
+            exit 0
+        fi
     done
-    ~/.config/polybar/launch.sh
-    exit 0
-elif [ "$1" == "left" ]; then
-    ~/.config/polybar/launch.sh short
-    xrandr -o left
-    xinput list --name-only | grep 'Wacom' | while read -r line ; do
-        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix"  0 -1 1 1 0 0 0 0 1
-    done
-    exit 0
-elif [ "$1" == "right" ]; then
-    ~/.config/polybar/launch.sh short
-    xrandr -o right
-    xinput list --name-only | grep 'Wacom' | while read -r line ; do
-        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix"  0 1 0 -1 0 1 0 0 1
-    done
-    exit 0
-elif [ "$1" == "inverted" ]; then
-    ~/.config/polybar/launch.sh
-    xrandr -o inverted
-    xinput list --name-only | grep 'Wacom' | while read -r line ; do
-        xinput set-prop "$line" --type=float "Coordinate Transformation Matrix"  -1 0 1 0 -1 1 0 0 1
-    done
-    exit 0
 else
-    echo "Usage: rotate_screen [normal|left|right|inverted]"
+    echo "Usage: rotate_screen [normal|left|right|inverted|next|previous]"
     exit 1
 fi
