@@ -1458,7 +1458,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
         type[group1]= "FIFTH_LAYER",
         type[group2]= "FOUR_LEVEL",
         type[group3]= "FOUR_LEVEL",
-        symbols[Group1]= [      apostrophe,        quotedbl,        NoSymbol,        NoSymbol ],
+        symbols[Group1]= [      apostrophe,        quotedbl,      dead_greek,        NoSymbol ],
         symbols[Group2]= [      apostrophe,        quotedbl,          otilde,          Otilde ],
         symbols[Group3]= [       masculine,     ordfeminine, dead_circumflex,      dead_caron ]
     };
@@ -1534,19 +1534,19 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
     };
     key <AB08> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [           comma,       semicolon,      dead_acute,        NoSymbol ],
+        symbols[Group1]= [           comma,       semicolon,           minus,        NoSymbol ],
         symbols[Group2]= [           comma,            less,    dead_cedilla,      asciitilde ],
         symbols[Group3]= [           comma,       semicolon,  horizconnector,        multiply ]
     };
     key <AB09> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [          period,           colon, dead_circumflex,        NoSymbol ],
+        symbols[Group1]= [          period,           colon,      underscore,        NoSymbol ],
         symbols[Group2]= [          period,         greater,   dead_abovedot,      asciitilde ],
         symbols[Group3]= [          period,           colon,  periodcentered,        division ]
     };
     key <AB10> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [           minus,      underscore,      dead_greek,        NoSymbol ],
+        symbols[Group1]= [       backslash,           slash,             bar,        NoSymbol ],
         symbols[Group2]= [           slash,        question,    questiondown,      asciitilde ],
         symbols[Group3]= [           minus,      underscore,   dead_belowdot,   dead_abovedot ]
     };
