@@ -30,10 +30,9 @@ rofi                                | Command launching and others
 touchegg (touche)                   | Movement commands
 dunst                               | Notification daemon
 i3-battery-popup                    | Script for notifying low battery
-pulseaudio pulseaudio-alsa          | Sound server
 flameshot                           | Screenshots
-pulsemixer (pulseaudio-control)     | Sound CLI management
-pulseaudio-bluetooth                | Sound for bluetooth
+pipewire                            | Sound server
+pulsemixer                          | Sound CLI management
 bluez bluez-utils (blueman)         | Bluetooth management
 fprintd                             | Fingerprint reading
 brave(-bin)                         | Web bowser
@@ -50,7 +49,6 @@ ripgrep                             | ---
 fd                                  | ---                              
 discord                             | ---                              
 spotify                             | ---                              
-todoist-appimage                    | ---                              
 alsa-utils                          | ---                              
 
 ## Extra Configuration
