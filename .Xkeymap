@@ -1265,13 +1265,13 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
     };
     key <AE11> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [            plus,        asterisk,       plusminus,          emdash ],
+        symbols[Group1]= [           minus,      underscore,       plusminus,          emdash ],
         symbols[Group2]= [           minus,      underscore,          endash,          emdash ],
         symbols[Group3]= [      apostrophe,        question,       backslash,    questiondown ]
     };
     key <AE12> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [          exclam,        question,      exclamdown,    questiondown ],
+        symbols[Group1]= [            plus,           equal,        multiply,        division ],
         symbols[Group2]= [           equal,            plus,        multiply,        division ],
         symbols[Group3]= [   guillemotleft,  guillemotright,    dead_cedilla,     dead_ogonek ]
     };
@@ -1368,7 +1368,7 @@ xkb_symbols "pc_us(colemak)_us(colemak)_2_pt_3_inet(evdev)" {
     };
     key <AD12> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [      parenright,    bracketright,      braceright,           U203A ],
+        symbols[Group1]= [           minus,            plus,           equal,           U203A ],
         symbols[Group2]= [    bracketright,      braceright,  guillemotright,           U203A ],
         symbols[Group3]= [      dead_acute,      dead_grave,      dead_tilde,     dead_macron ]
     };
