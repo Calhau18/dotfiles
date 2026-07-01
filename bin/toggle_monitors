@@ -15,7 +15,6 @@ SCREEN_COUNT=$(echo "$XRANDR_OUTPUT" | grep ' connected' | wc -l)
 if [ "$SCREEN_COUNT" -eq 1 ]; then
     xrandr --output "$PRIMARY" --primary --mode "$PRIMARY_RESOLUTION" --pos 0x0 \
            --output HDMI-1 --off --output DP-1 --off --output DP-2 --off
-    exit 0
 fi
 
 # Dual monitor setup
@@ -26,8 +25,8 @@ if [ "$SCREEN_COUNT" -eq 2 ]; then
     SECONDARY_WIDTH=$(echo "$SECONDARY_RESOLUTION" | cut -d 'x' -f1)
     SECONDARY_HEIGHT=$(echo "$SECONDARY_RESOLUTION" | cut -d 'x' -f2)
 
-    # Default position is "right"
-    POSITION=${1:-right}
+    # Default position is "above"
+    POSITION=${1:-above}
 
     case "$POSITION" in
         left)
@@ -48,7 +47,7 @@ if [ "$SCREEN_COUNT" -eq 2 ]; then
             fi
             ;;
         *)
-            echo "Invalid argument. Use 'left', 'right', or 'above'. Defaulting to 'right'."
+            echo "Invalid argument. Use 'left', 'right', or 'above'. Defaulting to 'above'."
             xrandr --output "$PRIMARY" --primary --mode "$PRIMARY_RESOLUTION" --pos 0x0 \
                    --output "$SECONDARY" --mode "$SECONDARY_RESOLUTION" --right-of "$PRIMARY"
             ;;
@@ -59,8 +58,8 @@ fi
 change_bg
 
 # Map Wacom tablet to primary display
-xinput list --name-only | grep 'Wacom' | while read -r line; do
-    xinput map-to-output "$line" "$PRIMARY"
+xinput list | grep 'Wacom' | awk -F'id=' '{print $2}' | awk '{print $1}' | while read -r id; do
+    xinput map-to-output "$id" "$PRIMARY"
 done
 
 exit 0

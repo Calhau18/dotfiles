@@ -52,7 +52,7 @@ bindsym $mod+Return exec --no-startup-id alacritty
 
 # hide/show polybar
 bindsym $mod+x exec --no-startup-id polybar-msg cmd toggle
-
+bindsym $mod+Shift+x exec --no-startup-id polybar-msg cmd restart
 # kill focused window
 bindsym $mod+Escape kill
 
@@ -95,7 +95,7 @@ bindsym $mod+minus split toggle
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-bindsym --release $mod+button2 fullscreen toggle
+bindsym --whole-window $mod+button2 fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+w layout tabbed

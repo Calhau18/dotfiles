@@ -2,6 +2,7 @@
 
 # Terminate already running bar instances
 polybar-msg cmd quit
+sleep 0.1
 
 if [[ "$@" == "" ]]; then
     polybar left --log=error --reload 2>&1 & disown

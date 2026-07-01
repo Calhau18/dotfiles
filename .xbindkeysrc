@@ -32,16 +32,22 @@ Mod4 + z
 # Play-pause toggle
 "playerctl -p 'spotify' play-pause"
 Mod3 + Meta_R + s
+
+"playerctl -p 'spotify' play-pause"
 XF86AudioPlay
 
 # Skip to next track
 "playerctl -p 'spotify' next"
 Mod3 + Meta_R + t
+
+"playerctl -p 'spotify' next"
 XF86AudioNext
 
 # Skip to previous track
 "playerctl -p 'spotify' previous"
 Mod3 + Meta_R + r
+
+"playerctl -p 'spotify' previous"
 XF86AudioPrev
 
 # Mute volume
