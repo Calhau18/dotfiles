@@ -1,14 +1,20 @@
 " Define mapleader
 let mapleader = ' '
+let maplocalleader = '\'
 
 " Set some bindings
 nnoremap <C-S> <Cmd>w<CR>
 inoremap <C-S> <Cmd>w<CR>
 nnoremap <C-N> <Cmd>bnext<CR>
 nnoremap <C-P> <Cmd>bprev<CR>
+nnoremap <C-F>n :tab split<CR>
+nnoremap <C-F>t :tabc<CR>
 nnoremap <C-Q> <Cmd>Bclose<CR>
+nnoremap <C-M> <Cmd>!make > /dev/null &<CR><CR>
 nnoremap <C-L> :noh<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 tnoremap <Esc> <C-\><C-n>
+inoremap <C-M-n> <Plug>(copilot-next)
+inoremap <C-M-p> <Plug>(copilot-prev)
 
 " Setting buffer configuration
 set number relativenumber
@@ -44,7 +50,7 @@ set nrformats=alpha,hex,bin
 noremap , ;
 noremap ; ,
 
-filetype plugin on
+filetype plugin indent on
 
 " vim-plug section. 
 " Upstream at https://github.com/junegunn/vim-plug
@@ -54,9 +60,9 @@ call plug#begin()
 "   - stdpath('data') . '/plugged'
 
   " Themes
-  Plug 'gruvbox-community/gruvbox'
+  Plug 'ellisonleao/gruvbox.nvim'
 
-  " Highlighter. TODO: explore treesitter playground plugin.
+  " Highlighter.
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   " Highlight yanked text.
   Plug 'machakann/vim-highlightedyank'
@@ -68,18 +74,27 @@ call plug#begin()
     autocmd!
     autocmd VimEnter * hi illuminatedWord cterm=bold
   augroup END
+  " Sage
+  Plug 'petRUShka/vim-sage'
 
   " Fuzzy finder.
   Plug 'nvim-lua/plenary.nvim'
   " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
-
+  Plug 'nvim-telescope/telescope.nvim'
   " NeoVim Cheatsheet
   Plug 'doctorfree/cheatsheet.nvim'
+
   " Undotree
   Plug 'mbbill/undotree'
   " Delete a buffer in Vim without closing the window
   Plug 'rbgrouleff/bclose.vim'
+
+  " LaTeX
+  Plug 'lervag/vimtex'
+  Plug 'sirver/ultisnips'
+  Plug 'ckunte/latex-snippets-vim', { 'tag': '*' }
+  Plug 'peterbjorgensen/sved'
+
   " Markdown live preview.
   Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app && yarn install'}
   " Package plugin commands for repetition
@@ -88,11 +103,13 @@ call plug#begin()
   Plug 'tpope/vim-surround'
   " Comment/uncomment lines.
   Plug 'tpope/vim-commentary'
+  " Automatically adjust identation.
+  Plug 'tpope/vim-sleuth'
 
   " Git plugins. TODO: configure keymaps
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
-  Plug 'f-person/git-blame.nvim'
+  " Plug 'f-person/git-blame.nvim'
 
   " LSP Support
   Plug 'neovim/nvim-lspconfig'
@@ -113,7 +130,7 @@ call plug#begin()
   Plug 'rafamadriz/friendly-snippets'
 
   " Github Copilot.
-  Plug 'github/copilot.vim'
+  " Plug 'github/copilot.vim'
 
   " Configure status bar.
   Plug 'nvim-lualine/lualine.nvim'
@@ -128,11 +145,42 @@ call plug#end()
 
 " Colorscheme
 set termguicolors
-colorscheme desert
+colorscheme gruvbox
 highlight Normal guibg=none   
 
 " Undotree remap
 nnoremap <leader>u :UndotreeToggle<CR>
+
+" Vimtex configurations
+let g:vimtex_view_general_viewer = 'evince'
+let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_imaps_leader='!'
+nnoremap <localleader>lv :call SVED_Sync()<CR>
+
+let g:vimtex_imaps_disabled = ['jj', 'jJ', 'jh', 'jH', 'jk', 'jK', 'jl', 'jL']
+call vimtex#imaps#add_map({'lhs': '!n', 'rhs': '\leftarrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!N', 'rhs': '\Leftarrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!!', 'rhs': '\leftarrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!o', 'rhs': '\rightarrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!O', 'rhs': '\Rightarrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!õ', 'rhs': '\rightarrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!Õ', 'rhs': '\Rightarrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!e', 'rhs': '\uparrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!E', 'rhs': '\Uparrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!i', 'rhs': '\downarrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!I', 'rhs': '\Downarrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '!=', 'rhs': '\Leftrightarrow', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '~', 'rhs': '\approx', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '<', 'rhs': '\le', 'wrapper': 'vimtex#imaps#wrap_math'})
+call vimtex#imaps#add_map({'lhs': '>', 'rhs': '\ge', 'wrapper': 'vimtex#imaps#wrap_math'})
+" See mappings with :VimtexImapsList
+
+" LaTeX snippets configuration
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+
+let g:vimtex_indent_delims = {}
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -199,6 +247,39 @@ lua << END
 
   -- require('telescope').load_extension('fzf')
 
+  --------------------------- CHEATSHEET CONFIG -------------------------------
+
+require("cheatsheet").setup({
+    -- Whether to show bundled cheatsheets
+
+    -- For generic cheatsheets like default, unicode, nerd-fonts, etc
+    bundled_cheatsheets = {
+        enabled = { "default" },
+        disabled = {},
+    },
+    -- bundled_cheatsheets = true,
+
+    -- For plugin specific cheatsheets
+    -- bundled_plugin_cheatsheets = {
+    --     enabled = {},
+    --     disabled = {},
+    -- }
+    bundled_plugin_cheatsheets = true,
+
+    -- For bundled plugin cheatsheets, do not show a sheet if you
+    -- don't have the plugin installed (searches runtimepath for
+    -- same directory name)
+    include_only_installed_plugins = true,
+
+    -- Key mappings bound inside the telescope window
+    telescope_mappings = {
+        ['<A-CR>'] = require('cheatsheet.telescope.actions').select_or_fill_commandline,
+        ['<CR>'] = require('cheatsheet.telescope.actions').select_or_execute,
+        ['<C-Y>'] = require('cheatsheet.telescope.actions').copy_cheat_value,
+        ['<C-E>'] = require('cheatsheet.telescope.actions').edit_user_cheatsheet,
+    }
+})
+
   ----------------------------- LUALINE CONFIG --------------------------------
 
   require('lualine').setup {
@@ -241,17 +322,21 @@ lua << END
   ----------------------------- TREESITTER CONFIG -----------------------------
 
   require('nvim-treesitter.configs').setup {
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
+    ensure_installed = { "c", "cpp", "lua", "vim", "vimdoc", "query" },
     sync_install = false,
-    auto_install = true,
+    auto_install = false,
     highlight = {
       enable = true,
+      disable = { "latex" },
       disable = function(lang, buf)
-	local max_filesize = 100 * 1024 -- 100 KB
-	local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-	if ok and stats and stats.size > max_filesize then
-	  return true
-	end
+       	if lang == 'latex' then
+       	  return true
+       	end
+        local max_filesize = 100 * 1024 -- 100 KB
+        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and stats and stats.size > max_filesize then
+          return true
+        end
       end,
       additional_vim_regex_highlighting = false,
     },
